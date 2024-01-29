@@ -25,6 +25,7 @@ employees = [
     Employee("171G55", "Abhi", 25, 100000),
     Employee("152K46", "Jaya", 32, 85000)
 ]
+print("LAB2 done")
 print("Choose sorting parameter:")
 print("1. Age")
 print("2. Name")
