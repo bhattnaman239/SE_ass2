@@ -1,0 +1,43 @@
+class Employee:
+    def __init__(self, emp_id, name, age, salary):
+        self.emp_id = emp_id
+        self.name = name
+        self.age = age
+        self.salary = salary
+
+    def __str__(self):
+        return f"{self.emp_id} {self.name} {self.age} {self.salary}"
+
+def sort_employees(employees, key):
+    if key == 1:
+        return sorted(employees, key=lambda x: x.age)
+    elif key == 2:
+        return sorted(employees, key=lambda x: x.name)
+    elif key == 3:
+        return sorted(employees, key=lambda x: x.salary)
+    else:
+        raise ValueError("Invalid sorting parameter")
+
+def print_employees(employees):
+    for employee in employees:
+        print(employee)
+
+# Sample Employee data
+employees = [
+    Employee("161E90", "Ramu", 35, 59000),
+    Employee("171E22", "Tejas", 30, 82100),
+    Employee("171G55", "Abhi", 25, 100000),
+    Employee("152K46", "Jaya", 32, 85000)
+]
+
+# Get user input for sorting parameter
+print("Choose sorting parameter:")
+print("1. Age")
+print("2. Name")
+print("3. Salary")
+sorting_param = int(input("Enter your choice (1/2/3): "))
+
+# Sort and print the data
+sorted_employees = sort_employees(employees, sorting_param)
+print("\nSorted Employee Data:")
+print_employees(sorted_employees)
